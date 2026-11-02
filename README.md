@@ -1,6 +1,19 @@
-# Welcome to Thinkoo
+<h1 align="center">Thinkoo</h1>
 
-This is the mobile application for Thinklery.
+<p align="center">Mobile app for Thinklery that links a physical NFC plushie to a profile and to small games and quizzes.</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/how-it-works-dark.svg">
+    <img src="docs/how-it-works-light.svg" alt="A line runs from the NFC tag id to a GET lookup, then a POST that creates the plushie only if it was not found, then the plushie store. A second path skips the POST when the plushie already exists." width="760">
+  </picture>
+</p>
+
+<p align="center">Drawn from <code>utils/plushie.ts</code>, <code>components/Nfc.tsx</code> and <code>app/(tabs)/home.tsx</code>. This is a diagram, not a screenshot.</p>
+
+## Why
+
+Each plushie carries an NFC tag. The app reads the tag id, fetches that plushie from the backend or creates it on first scan, and keeps it in app state for the plushie screens and the games (Cosmic Clash, Rocket Dash) and quiz.
 
 ## Get started
 
@@ -100,6 +113,8 @@ There will be linting and formatting checks in the CI pipeline to ensure the cod
    ```
 
 ## More Information
+
+The app reads `EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY` and `EXPO_PUBLIC_API_SECRET` (see `utils/supabase.ts` and `utils/plushie.ts`). Note that `.env.example` lists the Supabase names without the `EXPO_PUBLIC_` prefix.
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" width="760" height="210" role="img" aria-labelledby="t d">
+<title id="t">Plushie lookup flow</title>
+<desc id="d">An NFC tag id is read, the backend is asked for a plushie with that id, and a new plushie row is created only if none exists. The result goes to the plushie store.</desc>
+<g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#e6edf3">
+<text x="20" y="40" font-weight="600">1. Tag id</text>
+<text x="20" y="60" fill="#9198a1" font-size="12">NFC tap, or ?nfcId= in</text>
+<text x="20" y="76" fill="#9198a1" font-size="12">the deep link</text>
+<text x="200" y="40" font-weight="600">2. GET /api/get</text>
+<text x="200" y="60" fill="#9198a1" font-size="12">look up plushies row</text>
+<text x="200" y="76" fill="#9198a1" font-size="12">by nfc_id</text>
+<text x="400" y="40" font-weight="600">3. POST /api/post</text>
+<text x="400" y="60" fill="#9198a1" font-size="12">only if nothing found:</text>
+<text x="400" y="76" fill="#9198a1" font-size="12">insert level 0, xp 0</text>
+<text x="600" y="40" font-weight="600">4. Plushie store</text>
+<text x="600" y="60" fill="#9198a1" font-size="12">zustand state, read</text>
+<text x="600" y="76" fill="#9198a1" font-size="12">by the plushie screens</text>
+</g>
+<path d="M20 110 H740" stroke="#fb923c" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 9" fill="none"/>
+<path d="M285 110 V150 H620 V118" stroke="#9198a1" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<path d="M614 124 L620 114 L626 124" stroke="#9198a1" stroke-width="1.5" fill="none"/>
+<text x="452" y="172" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#9198a1">plushie already exists: skip step 3</text>
+</svg>
